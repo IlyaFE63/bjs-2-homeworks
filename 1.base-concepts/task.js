@@ -1,19 +1,16 @@
 "use strict"
 function solveEquation(a, b, c) {
   let arr = [ ];
-  arr.push(a, b, c);
-  let D = [b**2 - 4*a*c];
-  if (D < 0) {
-    arr = [ ]
-  }
-    else if (D > 0) {
+  let D = b**2 - 4*a*c;
+  if (D > 0) {
       arr = [(-b + Math.sqrt(D) )/(2*a), (-b - Math.sqrt(D) )/(2*a)]
     }
-  else {
+  else if (D === 0) {
      arr = [-b / (2*a)]
   }
   return arr;
 }
+solveEquation(9, -30, 25)
 solveEquation(1, 5, 4)
 solveEquation(1, 2, 1)
 solveEquation(1, 2, 10)
